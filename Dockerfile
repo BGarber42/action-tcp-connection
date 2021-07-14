@@ -1,8 +1,6 @@
-# Container image that runs your code
 FROM python:alpine
+WORKDIR /usr/src/app
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.py /entrypoint.py
+COPY entrypoint.py ./
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.py"]
+CMD [ "python", "./entrypoint.py" ]

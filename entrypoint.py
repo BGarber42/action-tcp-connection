@@ -12,3 +12,16 @@ def netcat(host, port, content=None):
             break
         print(repr(data))
     s.close()
+
+def main():
+    my_host = os.environ["INPUT_REMOTEHOST"]
+    my_port = os.environ["INPUT_REMOTEPORT"]
+
+    netcat(my_host, my_port)
+
+    my_output = "Yay!"
+    print(f"::set-output name=myOutput::{my_output}")
+
+
+if __name__ == "__main__":
+    main()

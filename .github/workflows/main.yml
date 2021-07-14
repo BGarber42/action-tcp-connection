@@ -1,3 +1,4 @@
+name: Github Action - TCP Test
 on: [push]
 
 jobs:

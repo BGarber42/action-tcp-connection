@@ -1,3 +1,4 @@
+import os
 import socket
 
 def netcat(host, port, content=None):

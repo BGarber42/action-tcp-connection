@@ -12,5 +12,5 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: conn
         with:
-          remote-host: '8.8.8.8'
-          remote-port: '8990'
+          remote-host: '1.1.1.1'
+          remote-port: '80'

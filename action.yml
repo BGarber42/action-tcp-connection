@@ -2,11 +2,11 @@
 name: 'Make TCP Connection'
 description: 'Test TCP Connectivity'
 inputs:
-  remote-host:  # id of input
+  remotehost:  # id of input
     description: 'IP to connect to'
     required: true
     default: '127.0.0.1'
-  remote-port:
+  remoteport:
     description: 'Port to connect to'
     required: true
     default: '80'

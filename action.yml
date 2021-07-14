@@ -13,6 +13,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.remote-host }}
-    - ${{ inputs.remote-port }}

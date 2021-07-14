@@ -1,0 +1,18 @@
+# action.yml
+name: 'Make TCP Connection'
+description: 'Test TCP Connectivity'
+inputs:
+  remote-host:  # id of input
+    description: 'IP to connect to'
+    required: true
+    default: '127.0.0.1'
+  remote-port:
+    description: 'Port to connect to'
+    required: true
+    default: '80'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.remote-host }}
+    - ${{ inputs.remote-port }}

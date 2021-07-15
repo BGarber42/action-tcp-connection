@@ -1,5 +1,6 @@
 import os
 import socket
+import logging
 
 import backoff
 
@@ -22,9 +23,9 @@ def netcat(host, port, content=None):
 
 
 def main():
+    logging.getLogger("backoff").addHandler(logging.StreamHandler())
     my_host = os.environ["INPUT_REMOTEHOST"]
     my_port = os.environ["INPUT_REMOTEPORT"]
-    my_retri
 
     netcat(my_host, my_port)
 

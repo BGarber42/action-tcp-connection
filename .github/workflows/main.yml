@@ -20,4 +20,3 @@ jobs:
         with:
           remotehost: '1.1.1.1'
           remoteport: '8675'
-        continue-on-error: true

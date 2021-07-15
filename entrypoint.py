@@ -27,7 +27,11 @@ def main():
     my_host = os.environ["INPUT_REMOTEHOST"]
     my_port = os.environ["INPUT_REMOTEPORT"]
 
-    netcat(my_host, my_port)
+    try:
+        netcat(my_host, my_port)
+    except TimeoutError:
+        print("Timed out waiting for connection")
+        raise Exception("Timed out waiting for connection")
 
     my_output = "Yay!"
     print(f"::set-output name=myOutput::{my_output}")

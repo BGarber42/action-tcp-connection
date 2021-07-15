@@ -8,9 +8,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test Connectivity
+      - name: Test Working Connectivity
         uses: ./ # Uses an action in the root directory
         id: conn
         with:
           remotehost: '1.1.1.1'
           remoteport: '80'
+      - name: Test Failing Connectivity
+        uses: ./
+        id: bad_conn
+        with:
+          remotehost: '1.1.1.1'
+          remoteport: '8675'
+        continue-on-error: true

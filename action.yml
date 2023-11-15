@@ -1,15 +1,24 @@
 # action.yml
 name: 'Make TCP Connection'
-description: 'Test TCP Connectivity'
+description: 'Test TCP Connectivity with retry logic'
 inputs:
   remotehost:  # id of input
-    description: 'IP to connect to'
+    description: 'IP address or hostname to connect to'
     required: true
     default: '127.0.0.1'
   remoteport:
-    description: 'Port to connect to'
+    description: 'Port number to connect to (1-65535)'
     required: true
     default: '80'
+  maxtime:
+    description: 'Maximum time in seconds to retry connection'
+    required: false
+    default: '60'
+outputs:
+  myOutput:
+    description: 'Success message when connection is established'
+  error:
+    description: 'Error message if connection fails'
 runs:
   using: 'docker'
   image: 'Dockerfile'
